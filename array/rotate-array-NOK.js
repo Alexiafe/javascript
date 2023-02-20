@@ -22,13 +22,3 @@ var rotate = function (nums, k) {
 };
 
 rotate(nums, k);
-
-//   valToPlace = nums[0];
-//   for (var i = 0; i < nums.length + 1; i++) {
-//     whereToPlace = (k * i) % nums.length;
-//     replacedVal = nums[whereToPlace];
-
-//     nums[whereToPlace] = valToPlace;
-//     valToPlace = replacedVal;
-//     console.log(nums);
-//   }

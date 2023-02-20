@@ -8,17 +8,11 @@ const nums = [1, 0, 1]; // 0
  * @return {number}
  */
 var singleNumber = function (nums) {
-  let output = nums[0];
-  if (nums.length == 1) return nums[0];
-  let i = 0;
-  while (i <= nums.length) {
-    if (output == nums[i + 1]) {
-      output = nums[i + 1];
-      i++;
-    }
-    i++;
+  let result = 0;
+  for (let i = 0; i < nums.length; i++) {
+    result ^= nums[i];
   }
-  return output;
+  return result;
 };
 
 console.log(singleNumber(nums));
