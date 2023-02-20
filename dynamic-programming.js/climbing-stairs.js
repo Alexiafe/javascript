@@ -1,7 +1,7 @@
 var n = 2
 // 2
 
-// var n = 3
+var n = 3
 // 3
 
 /**
@@ -9,18 +9,19 @@ var n = 2
  * @return {number}
  */
 var climbStairs = function (n) {
-    let ways = 0
-    let i = 0
-    while (i <= n) {
-        if (n % 2 == 0) {
-            ways += 2 && i++
-            ways += 1 && i++
-        } else {
-            ways += 1
-        }
-        i++
+    if (n <= 1) {
+        return 1;
     }
-    return ways - 1
-};
+    let prev = 1;
+    let curr = 1;
+    for (let i = 2; i <= n; i++) {
+        let next = prev + curr;
+        prev = curr;
+        curr = next;
+    }
+    return curr;
+}
+
+
 
 console.log(climbStairs(n))
